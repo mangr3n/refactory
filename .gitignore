@@ -11,3 +11,6 @@ vite.config.ts.timestamp-*
 
 # History files
 .history/
+
+# VS Code settings
+.vscode/
