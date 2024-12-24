@@ -69,3 +69,68 @@
 - Sync complexity with large change sets
 - Git storage overhead for change tracking
 - CRDT space complexity considerations
+
+## Project Vision: Refactory
+
+## Overview
+Refactory implements a CRDT-based state management system using tries as the underlying data structure. The key innovation is the concept of "state boundaries" - containers that represent independent agents or entities in a distributed system, each maintaining their own versioned view of shared state.
+
+## Core Concepts
+
+### 1. State Boundaries
+- Containers as root state management units
+- Each container represents an independent agent's view
+- Clean merge semantics between boundaries
+- Version tracking via vector clocks
+- Natural mapping to real-world entities (users, devices, services)
+
+### 2. Trie Structure
+- Path-based state organization
+- Efficient partial updates
+- Hierarchical namespace management
+- Structural sharing for efficiency
+
+### 3. CRDT Properties
+- Strong eventual consistency
+- Automatic conflict resolution
+- Causality tracking
+- Distributed operation without central coordination
+
+## Design Philosophy
+
+### 1. Model Reality
+- State boundaries mirror real-world independence
+- Changes flow naturally between boundaries
+- Explicit representation of causality and time
+
+### 2. Simplicity
+- Minimal core concepts (boundary, value, branch)
+- Clean, predictable merge semantics
+- Intuitive path-based API
+
+### 3. Correctness
+- Provable CRDT properties
+- Clear consistency guarantees
+- Comprehensive testing
+
+### 4. Performance
+- Efficient memory usage through structural sharing
+- Fast operations on large state trees
+- Scalable for real-world applications
+
+## Use Cases
+
+### 1. Multi-Agent Systems
+- Independent agents with local state
+- Natural conflict resolution
+- Causality tracking between agents
+
+### 2. Distributed Applications
+- Edge computing state management
+- Offline-first applications
+- Peer-to-peer synchronization
+
+### 3. Collaborative Software
+- Real-time collaboration
+- Versioned state management
+- Conflict-free updates

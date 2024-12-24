@@ -271,3 +271,92 @@ Measure:
 - [ ] Merge Semantics
 - [ ] Conflict Resolution
 - [ ] Timeline Branching
+
+## Development Plan
+
+## Current Focus: State Boundary Implementation
+Last Updated: 2024-12-24 0648 EST
+
+### Completed Work
+
+#### 1. Core Trie Implementation [✓]
+- Basic trie structure with path-based access
+- Immutable updates with structural sharing
+- Type system for nodes and values
+
+#### 2. CRDT Foundation [✓]
+- Vector clock implementation
+- Version tracking for values
+- Basic causality checking
+
+#### 3. State Boundary Design [✓]
+- Container concept as state boundary
+- Clean separation of concerns:
+  - Container: root state management
+  - Trie: hierarchical storage
+  - Values: versioned data
+- Proper CRDT merge semantics
+
+### Current Sprint: Testing & Validation
+
+#### 4. Core Functionality Tests [🔄]
+- [ ] Container creation and basic operations
+  - Create container
+  - Set values at paths
+  - Get values from paths
+- [ ] Versioning and causality
+  - Vector clock operations
+  - Version comparison
+  - Causality tracking
+
+#### 5. CRDT Property Tests [⏳]
+- [ ] Strong eventual consistency
+- [ ] Commutative updates
+- [ ] Associative merges
+- [ ] Idempotent operations
+
+### Next Up
+
+#### 6. Advanced Operations
+- [ ] Batch updates
+- [ ] Transactional changes
+- [ ] Path-based subscriptions
+- [ ] Change notification system
+
+#### 7. Performance Optimization
+- [ ] Path compression
+- [ ] Memory usage optimization
+- [ ] Operation benchmarking
+- [ ] Structural sharing improvements
+
+#### 8. Developer Experience
+- [ ] TypeScript type improvements
+- [ ] API documentation
+- [ ] Usage examples
+- [ ] Integration guides
+
+## Success Criteria
+
+### Functionality
+- All CRDT properties formally verified
+- Clean merge semantics in all cases
+- Proper causality tracking
+
+### Performance
+- O(1) container operations
+- O(log n) path operations
+- Efficient memory usage
+
+### Quality
+- 100% test coverage
+- Clear API documentation
+- Comprehensive examples
+- Type-safe interfaces
+
+## Current Blockers
+None - proceeding with test implementation
+
+## Next Actions
+1. Implement core functionality tests
+2. Verify CRDT properties
+3. Document current design decisions in ADR
